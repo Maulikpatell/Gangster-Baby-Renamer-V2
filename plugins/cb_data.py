@@ -212,7 +212,7 @@ async def vid(bot, update):
             filw = await app.send_video(log_channel, video=file_path, thumb=ph_path, duration=duration, caption=caption, progress=progress_for_pyrogram, progress_args=("```Trying To Uploading```",  ms, c_time))
             from_chat = filw.chat.id
             mg_id = filw.id
-            time.sleep(2)
+            time.sleep(1)
             await bot.copy_message(update.from_user.id, from_chat, mg_id)
             await ms.delete()
             os.remove(file_path)
